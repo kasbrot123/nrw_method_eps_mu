@@ -19,9 +19,11 @@ The reflection coefficient is defined as:
 
 ```math
 X = \frac{S_{11}^2-S_{21}^2+1}{2S_{11}}
+```
+```math
 \Gamma =  X \pm \sqrt(X^2-1)
 ```
-Choose the sign of the root for $\Gamma$ such that $|\Gamma|<=1$.
+Choose the sign of the root for $\Gamma$ such that $|\Gamma|\le1$.
 The transmission coefficient is defined as.
 
 ```math
@@ -46,26 +48,27 @@ The group delay for both values is defined as:
 
 ```math
 \tau = \frac{d\phi}{\omega} = -\frac{1}{2\pi}\frac{d\phi}{df}
-\tau_{meas} = -\frac{1}{2\pi}\frac{d\phi_{meas}}{df} = -\frac{1}{2\pi}\frac{d}{df}arg(T)
-\tau_{calc} = -\frac{1}{2\pi}\frac{d\phi_{calc}}{df} = -\frac{1}{2\pi}\frac{d}{df}\frac{L}{\Lambda}
 ```
-
-
+```math
+\tau_{meas} = -\frac{1}{2\pi}\frac{d\phi_{meas}}{df} = -\frac{1}{2\pi}\frac{d}{df}arg(T)
+```
+```math
+\tau_{calc} = -\frac{1}{2\pi}\frac{d\phi_{calc}}{df} = \frac{d}{df}\frac{L}{\Lambda} = 
+```
+```math
+=L\frac{d}{df}\sqrt{\frac{\varepsilon_r\mu_r f^2}{c^2}-\frac{1}{\lambda_c^2}} = \frac{1}{c^2}\frac{f\varepsilon_r\mu_r+f^2\frac{1}{2}\frac{d(\varepsilon_r\mu_r)}{df}}{\sqrt{\frac{\varepsilon_r\mu_r f^2}{c^2}-\frac{1}{\lambda_c^2}}}L
+```
 
 
 With this the permittivity and permeability is defined:
 
 ```math
 \mu_r = \frac{1+\Gamma_1}{\Lambda(1-\Gamma)\sqrt{\frac{1}{\lambda_0^2}-\frac{1}{\lambda_c^2}}}
+```
+```math
 \varepsilon_r = \frac{\lambda_0^2}{\mu_r}\left(\frac{1}{\lambda_c^2} - \left[\frac{1}{2\pi L}\ln\left(\frac{1}{T}\right)\right]^2\right)
 ```
 
-
-
-
-
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
-```
 
 ### Literature
 
