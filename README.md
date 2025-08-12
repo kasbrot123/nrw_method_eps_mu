@@ -86,5 +86,5 @@ The analysis explained in literature.
 Some instabilities were observed when:
 
 - The cutoff frequency is near the lowest measurement frequency
-- Long sample lengths
+- Long sample lengths or high permittivity/permeability values (short wavelengths media)
 
