@@ -72,11 +72,13 @@ With this the permittivity and permeability is defined:
 
 ### Literature
 
-The analysis is shown in literature.
+The analysis explained in literature.
 
-- Paper 1
-- Paper 2
-- Paper 3
+- O. Luukkonen, S. I. Maslovski and S. A. Tretyakov, "A Stepwise Nicolson–Ross–Weir-Based Material Parameter Extraction Method," in IEEE Antennas and Wireless Propagation Letters, vol. 10, pp. 1295-1298, 2011, doi: 10.1109/LAWP.2011.2175897.
+- A. M. Nicolson and G. F. Ross, "Measurement of the Intrinsic Properties of Materials by Time-Domain Techniques," in IEEE Transactions on Instrumentation and Measurement, vol. 19, no. 4, pp. 377-382, Nov. 1970, doi: 10.1109/TIM.1970.4313932.
+- W. B. Weir, "Automatic measurement of complex dielectric constant and permeability at microwave frequencies," in Proceedings of the IEEE, vol. 62, no. 1, pp. 33-36, Jan. 1974, doi: 10.1109/PROC.1974.9382.
+- Measurement of Dielectric Material Properties Application Note R&S.
+
 
 
 ## Instabilities
