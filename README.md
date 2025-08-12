@@ -3,4 +3,83 @@
 Nicholson-Ross-Weir (NRW) method in python for calculating refractive index,
 permittivity and permeability from scattering parameters (S11/S21).
 
+## Content
+
+- **Function for NRW Method**: Calculates the permittivity and permeability. Takes frequency values, complex S11/S21, the sample length and a cutoff frequency (*optional*).
+- **Function for reverse NRW Method**: Calculates the scattering parameters S11/S21 from the permittivity and the permeability. Takes frequency values, complex permittivity/permeability, the sample length and a cutoff frequency (*optional*).
+- **High precision forwards-backwards NRW calculation**: This was done as an instability analysis. One can specify the permittivity/permeability to calculate the scattering parameters S11/S21 and back to permittivity/permeability using NRW method. By introducing noise it is possible to test a measurement result. 
+
+
+## Analysis
+
+### Basis
+
+The NRW method starts using the complex scattering parameters $S_{11}$ and $S_{21}$.
+The reflection coefficient is defined as:
+
+```math
+X = \frac{S_{11}^2-S_{21}^2+1}{2S_{11}}
+\Gamma =  X \pm \sqrt(X^2-1)
+```
+Choose the sign of the root for $\Gamma$ such that $|\Gamma|<=1$.
+The transmission coefficient is defined as.
+
+```math
+T = \frac{S_{11}+S_{21}-\Gamma}{1-(S_{11}+S_{21})\Gamma}
+```
+
+Using $\Gamma$ and $T$ one can calculate $\Lambda$:
+
+```math
+\frac{1}{\Lambda^2} = (\frac{\varepsilon_r\mu_r}{\lambda_0}-\frac{1}{\lambda_c^2}) = -(\frac{1}{2\pi L}ln(\frac{1}{T}))^2
+```
+The equation for $\Lambda$ is not well defined since the logarithm of $1/T$ has multiple solutions which are equal to $ln(1/T) + i(\Theta + 2\pi n)$ where $n$ is an integer value. 
+In the NRW method one can estimate the value $n$ by using the group delay. 
+
+The idea is that the group delay is the derivative of the phase and therefore is independent of the $2\pi n$. One can compare the measured group delay and the calculated group delay and the best value for $n$ is found where:
+
+```math
+\tau_{meas} - \tau_{calc} \approx 0
+```
+
+The group delay for both values is defined as:
+
+```math
+\tau = \frac{d\phi}{\omega} = -\frac{1}{2\pi}\frac{d\phi}{df}
+\tau_{meas} = -\frac{1}{2\pi}\frac{d\phi_{meas}}{df} = -\frac{1}{2\pi}\frac{d}{df}arg(T)
+\tau_{calc} = -\frac{1}{2\pi}\frac{d\phi_{calc}}{df} = -\frac{1}{2\pi}\frac{d}{df}\frac{L}{\Lambda}
+```
+
+
+
+
+With this the permittivity and permeability is defined:
+
+```math
+\mu_r = \frac{1+\Gamma_1}{\Lambda(1-\Gamma)\sqrt{\frac{1}{\lambda_0^2}-\frac{1}{\lambda_c^2}}}
+\varepsilon_r = \frac{\lambda_0^2}{\mu_r}\left(\frac{1}{\lambda_c^2} - \left[\frac{1}{2\pi L}\ln\left(\frac{1}{T}\right)\right]^2\right)
+```
+
+
+
+
+
+\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+```
+
+### Literature
+
+The analysis is shown in literature.
+
+- Paper 1
+- Paper 2
+- Paper 3
+
+
+## Instabilities
+
+Some instabilities were observed when:
+
+- The cutoff frequency is near the lowest measurement frequency
+- Long sample lengths
 
