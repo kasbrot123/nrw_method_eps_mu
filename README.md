@@ -32,7 +32,7 @@ $S_{21}$. The reflection coefficient is defined as:
 X = \frac{S_{11}^2-S_{21}^2+1}{2S_{11}}
 ```
 ```math
-\Gamma =  X \pm \sqrt(X^2-1)
+\Gamma =  X \pm \sqrt{(X^2-1)}
 ```
 Choose the sign of the root for $\Gamma$ such that $|\Gamma|\le1$.
 The transmission coefficient is defined as.
@@ -44,10 +44,10 @@ T = \frac{S_{11}+S_{21}-\Gamma}{1-(S_{11}+S_{21})\Gamma}
 Using $\Gamma$ and $T$ one can calculate $\Lambda$:
 
 ```math
-\frac{1}{\Lambda^2} = (\frac{\varepsilon_r\mu_r}{\lambda_0}-\frac{1}{\lambda_c^2}) = -(\frac{1}{2\pi L}ln(\frac{1}{T}))^2
+\frac{1}{\Lambda^2} = \left(\frac{\varepsilon_r\mu_r}{\lambda_0}-\frac{1}{\lambda_c^2}\right) = -\left(\frac{1}{2\pi L}ln\left(\frac{1}{T}\right)\right)^2
 ```
 The equation for $\Lambda$ is not well defined since the logarithm of $1/T$ has
-multiple solutions which are equal to $ln(1/T) + i(\Theta + 2\pi n)$ where $n$
+multiple solutions which are equal to $ln(1/|T|) + i(\Theta + 2\pi n)$ where $n$
 is an integer value. In the NRW method one can estimate the value $n$ by using
 the group delay. 
 
