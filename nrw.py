@@ -153,7 +153,7 @@ if __name__ == '__main__':
     # data = np.loadtxt('./reverse.s2p', comments=['!', '#'], dtype=DTYPE)
     # f = data[:,0]
     # S11 = data[:,1] + 1j*data[:,2]
-    # S22 = data[:,7] + 1j*data[:,8]
+    # S21 = data[:,3] + 1j*data[:,4]
 
     eps_nrw, mu_nrw, N_nrw = nrw(S11, S21, f, Length, lambda_cut)
 

@@ -20,6 +20,12 @@ coefficient and selects the best n based on the group velocity.
   permittivity/permeability using NRW method. By introducing noise it is
   possible to test a measurement result. 
 
+```python
+# before install the dependencies in `requirements.txt`
+from nrw import nrw, nrw_reverse
+from nrw_gmpy2 import nrw2, nrw_reverse2
+```
+
 
 ## Analysis
 
@@ -78,7 +84,7 @@ The group delay for both values is defined as:
 With this the permittivity and permeability is defined:
 
 ```math
-\mu_r = \frac{1+\Gamma_1}{\Lambda(1-\Gamma)\sqrt{\frac{1}{\lambda_0^2}-\frac{1}{\lambda_c^2}}}
+\mu_r = \frac{1+\Gamma}{\Lambda(1-\Gamma)\sqrt{\frac{1}{\lambda_0^2}-\frac{1}{\lambda_c^2}}}
 ```
 ```math
 \varepsilon_r = \frac{\lambda_0^2}{\mu_r}\left(\frac{1}{\lambda_c^2} - \left[\frac{1}{2\pi L}\ln\left(\frac{1}{T}\right)\right]^2\right)
